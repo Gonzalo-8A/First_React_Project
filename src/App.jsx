@@ -34,10 +34,11 @@ function App() {
       <section id="coreConcepts">
         <h2>Principales Características</h2>
         <div id="coreConceptsCards">
-          <CoreConcepts {...CORE_CONCEPTS[0]}/>
-          <CoreConcepts {...CORE_CONCEPTS[1]}/>
-          <CoreConcepts {...CORE_CONCEPTS[2]}/>
-          <CoreConcepts {...CORE_CONCEPTS[3]}/>
+          {CORE_CONCEPTS.map((conceptItem)=> {
+            return (
+              <CoreConcepts {...conceptItem} />
+            )
+          })}
         </div>
       </section>
 

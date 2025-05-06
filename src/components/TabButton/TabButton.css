@@ -5,7 +5,7 @@
 #reactExamples menu{
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: clamp(0.5rem, 1vw, 2rem);
   margin-top: 1rem;
 }
 
