@@ -12,14 +12,21 @@
 
 #coreConceptsCards {
   display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
 }
 
 #coreConceptsCards > * {
-  flex: 1;
+  flex: 1 1 calc(24% - 2rem);
   transition: transform 0.6s ease;
   overflow: hidden;
   cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  #coreConceptsCards > * {
+    flex: 1 1 calc(40% - 1rem);
+  }
 }
 
 .coreConceptsCard:hover {
