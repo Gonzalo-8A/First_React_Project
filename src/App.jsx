@@ -30,7 +30,7 @@ function App() {
   return (
     <div>
       <Header />
-
+      
       <section id="coreConcepts">
         <h2>Principales Características</h2>
         <div id="coreConceptsCards">
