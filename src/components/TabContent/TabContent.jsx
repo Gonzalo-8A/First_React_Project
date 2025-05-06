@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { useEffect, useRef } from "react";
 import { EXAMPLES } from "../../data.js";
 import "./TabContent.css";
@@ -5,11 +6,11 @@ import "./TabContent.css";
 export default function TabContent({ selectedTopic }) {
   const contentRef = useRef(null);
 
-  useEffect(() => {
-    if (selectedTopic && contentRef.current) {
-      contentRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [selectedTopic]);
+  // useEffect(() => {
+  //   if (selectedTopic && contentRef.current) {
+  //     contentRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }, [selectedTopic]);
 
   const content = EXAMPLES[selectedTopic];
 
