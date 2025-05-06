@@ -35,9 +35,7 @@ function App() {
         <h2>Principales Características</h2>
         <div id="coreConceptsCards">
           {CORE_CONCEPTS.map((conceptItem)=> {
-            return (
-              <CoreConcepts {...conceptItem} />
-            )
+            <CoreConcepts {...conceptItem} />
           })}
         </div>
       </section>
