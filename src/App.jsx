@@ -1,18 +1,14 @@
-import { useState, useEffect } from 'react'
-import { CORE_CONCEPTS, EXAMPLES } from "./data.js";
-import CoreConcepts from './components/CoreConcepts/CoreConcepts.jsx';
+import { useEffect } from 'react'
 import  Header  from "./components/Header/Header.jsx";
-import TabButton from './components/TabButton/TabButton.jsx';
-import TabContent from './components/TabContent/TabContent.jsx';
+import CoreConceptsSection from './components/CoreConceptsSection/CoreConceptsSection.jsx';
+import ExamplesSection from './components/ExamplesSection/ExamplesSection.jsx';
 import "./App.css";
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState("default");
-  // const contentRef = useRef(null)
-  
+
   useEffect(() => {
     window.scrollTo({
-      top: 80,
+      top: 70,
       behavior: 'auto'
     });
   }, []);
@@ -22,34 +18,14 @@ function App() {
   //     contentRef.current.scrollIntoView({ behavior: 'smooth' });
   //   }
   // }, [selectedTopic]);
-
-  function handleClickMenu(selectedButton) {
-    setSelectedTopic(selectedButton)
-  }
   
   return (
     <>
       <Header />
       
-      <section id="coreConcepts">
-        <h2>Principales Características</h2>
-        <div id="coreConceptsCards">
-          {CORE_CONCEPTS.map((conceptItem, index)=> 
-            <CoreConcepts key={index} {...conceptItem} />
-          )}
-        </div>
-      </section>
+      <CoreConceptsSection />
 
-      <section id='reactExamples'>
-        <h2>Ejemplos React</h2>
-        <menu>
-          <TabButton isSelected={selectedTopic === 'components'} onClick={() => handleClickMenu("components")}>Componentes</TabButton>
-          <TabButton isSelected={selectedTopic === 'jsx'} onClick={() => handleClickMenu("jsx")}>JSX</TabButton>
-          <TabButton isSelected={selectedTopic === 'props'} onClick={() => handleClickMenu("props")}>Props</TabButton>
-          <TabButton isSelected={selectedTopic === 'state'} onClick={() => handleClickMenu("state")}>Estados</TabButton>
-        </menu>
-          <TabContent selectedTopic={selectedTopic}/>
-      </section>
+      <ExamplesSection />
 
       {/* <main>
         <h2></h2>

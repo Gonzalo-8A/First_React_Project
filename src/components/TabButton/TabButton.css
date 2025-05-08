@@ -1,18 +1,3 @@
-/* #reactExamples {
-
-} */
-
-#reactExamples menu{
-  display: flex;
-  justify-content: center;
-  gap: clamp(0.5rem, 1vw, 2rem);
-  margin-top: 1rem;
-}
-
-#reactExamples li{
-  list-style: none;
-}
-
 #reactExamples menu button{
   padding: 0.5rem 1rem;
   border: none;

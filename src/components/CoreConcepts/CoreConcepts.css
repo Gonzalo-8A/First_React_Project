@@ -1,15 +1,3 @@
-#coreConcepts {
-  padding: 2rem 1rem;
-  background-color: #12071d;
-  border-radius: 1rem;
-  margin-bottom: 2rem;
-}
-
-#coreConcepts h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
 #coreConceptsCards {
   display: flex;
   flex-wrap: wrap;
