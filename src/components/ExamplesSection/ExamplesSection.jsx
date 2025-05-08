@@ -12,7 +12,7 @@ export default function ExamplesSection() {
   }
   
   return (
-    <Section title={"Ejemplos React"} id={"reactExamples"}>
+    <Section title="Ejemplos React" id="reactExamples">
       <menu>
         <TabButton
           isSelected={selectedTopic === "components"}
