@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { CORE_CONCEPTS, EXAMPLES } from "./data.js";
 import CoreConcepts from './components/CoreConcepts/CoreConcepts.jsx';
 import  Header  from "./components/Header/Header.jsx";
@@ -8,27 +8,27 @@ import "./App.css";
 
 function App() {
   const [selectedTopic, setSelectedTopic] = useState("default");
-  const contentRef = useRef(null)
+  // const contentRef = useRef(null)
   
   useEffect(() => {
     window.scrollTo({
       top: 80,
-      behavior: 'auto' // sin animación
+      behavior: 'auto'
     });
   }, []);
 
-  useEffect(() => {
-    if (selectedTopic && contentRef.current) {
-      contentRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [selectedTopic]);
+  // useEffect(() => {
+  //   if (selectedTopic && contentRef.current) {
+  //     contentRef.current.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // }, [selectedTopic]);
 
   function handleClickMenu(selectedButton) {
     setSelectedTopic(selectedButton)
   }
   
   return (
-    <div>
+    <>
       <Header />
       
       <section id="coreConcepts">
@@ -54,7 +54,7 @@ function App() {
       {/* <main>
         <h2></h2>
       </main> */}
-    </div>
+    </>
   );
 }
 
