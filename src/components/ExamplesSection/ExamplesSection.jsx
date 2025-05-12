@@ -9,25 +9,25 @@ import "./ExamplesSection.css";
 export default function ExamplesSection() {
   const [selectedTopic, setSelectedTopic] = useState("default");
 
-  function handleClickMenu(selectedButton) {
+  function handleTabSelect(selectedButton) {
     setSelectedTopic(selectedButton);
   }
 
+  const buttonsList = Object.values(EXAMPLES)
+    .filter((_, index) => index !== 0)
+    .map((button) => (
+      <TabButton
+        isSelected={selectedTopic === button.key}
+        onClick={() => handleTabSelect(button.key)}
+        key={button.key}
+      >
+        {button.title}
+      </TabButton>
+    ));
+
   return (
     <Section title="Ejemplos React" id="reactExamples">
-      <TabsMenu
-        buttons={Object.values(EXAMPLES)
-          .filter((_, index) => index !== 0)
-          .map((button) => (
-            <TabButton
-              isSelected={selectedTopic === button.key}
-              onClick={() => handleClickMenu(button.key)}
-              key={button.key}
-            >
-              {button.title}
-            </TabButton>
-          ))}
-      >
+      <TabsMenu buttons={buttonsList}>
         <TabContent selectedTopic={selectedTopic} />
       </TabsMenu>
     </Section>
