@@ -1,11 +1,13 @@
+/* eslint-disable no-unused-vars */
 import './TabsMenu.css'
 
-export default function TabsMenu({ buttons, children }) {
+export default function TabsMenu({ buttons, children, ButtonsContainer }) {
+  
   return (
     <>
-      <menu>
+      <ButtonsContainer>
         {buttons}
-      </menu>
+      </ButtonsContainer>
       {children}
     </>
   )

@@ -27,7 +27,7 @@ export default function ExamplesSection() {
 
   return (
     <Section title="Ejemplos React" id="reactExamples">
-      <TabsMenu buttons={buttonsList}>
+      <TabsMenu ButtonsContainer="menu" buttons={buttonsList}>
         <TabContent selectedTopic={selectedTopic} />
       </TabsMenu>
     </Section>
