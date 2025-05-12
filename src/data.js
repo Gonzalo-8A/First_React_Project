@@ -32,10 +32,12 @@ export const CORE_CONCEPTS = [
 
 export const EXAMPLES = {
   default: {
-    title: "Por favor, pulse un botón del menú"
+    title: "Por favor, pulse un botón del menú",
+    key: "default"
   },
   components: {
     title: "Componentes",
+    key: "components",
     description:
       "Los componentes son los bloques de construcción de las aplicaciones React. Un componente es un módulo autocontenido (HTML + CSS opcional + JS) que renderiza alguna salida.",
     code: `
@@ -45,6 +47,7 @@ export const EXAMPLES = {
   },
   jsx: {
     title: "JSX",
+    key: "jsx",
     description:
       "JSX es una extensión sintáctica de JavaScript. Es similar a un lenguaje de plantillas, pero tiene toda la potencia de JavaScript (por ejemplo, puede emitir contenido dinámico).",
     code: `
@@ -55,6 +58,7 @@ export const EXAMPLES = {
   },
   props: {
     title: "Props",
+    key: "props",
     description:
       "Los componentes aceptan entradas arbitrarias llamadas props. Son como argumentos de función.",
     code: `
@@ -64,6 +68,7 @@ export const EXAMPLES = {
   },
   state: {
     title: "Estados",
+    key: "state",
     description:
       "El estado permite a los componentes de React cambiar su salida a lo largo del tiempo en respuesta a las acciones del usuario, las respuestas de la red y cualquier otra cosa.",
     code: `

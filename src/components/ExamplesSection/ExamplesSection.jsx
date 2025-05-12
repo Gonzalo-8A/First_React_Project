@@ -3,6 +3,7 @@ import TabButton from "../TabButton/TabButton.jsx";
 import TabContent from "../TabContent/TabContent.jsx";
 import Section from "../Section/Section.jsx";
 import TabsMenu from "../TabsMenu/TabsMenu.jsx";
+import { EXAMPLES } from "../../data.js";
 import "./ExamplesSection.css";
 
 export default function ExamplesSection() {
@@ -15,34 +16,17 @@ export default function ExamplesSection() {
   return (
     <Section title="Ejemplos React" id="reactExamples">
       <TabsMenu
-        buttons={
-          <>
+        buttons={Object.values(EXAMPLES)
+          .filter((_, index) => index !== 0)
+          .map((button) => (
             <TabButton
-              isSelected={selectedTopic === "components"}
-              onClick={() => handleClickMenu("components")}
+              isSelected={selectedTopic === button.key}
+              onClick={() => handleClickMenu(button.key)}
+              key={button.key}
             >
-              Componentes
+              {button.title}
             </TabButton>
-            <TabButton
-              isSelected={selectedTopic === "jsx"}
-              onClick={() => handleClickMenu("jsx")}
-            >
-              JSX
-            </TabButton>
-            <TabButton
-              isSelected={selectedTopic === "props"}
-              onClick={() => handleClickMenu("props")}
-            >
-              Props
-            </TabButton>
-            <TabButton
-              isSelected={selectedTopic === "state"}
-              onClick={() => handleClickMenu("state")}
-            >
-              Estados
-            </TabButton>
-          </>
-        }
+          ))}
       >
         <TabContent selectedTopic={selectedTopic} />
       </TabsMenu>
