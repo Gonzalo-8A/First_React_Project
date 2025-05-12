@@ -1,3 +1,7 @@
+#reactExamples li{
+  list-style: none;
+}
+
 #reactExamples menu button{
   padding: 0.5rem 1rem;
   border: none;
